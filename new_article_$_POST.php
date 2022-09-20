@@ -17,7 +17,6 @@ $lastID = $dbh->lastID();
 
 foreach ($_POST['tags'] as $item) {
     $bla = ['id_post' => (int)$lastID, 'id_tag' => (int)$item];
-    print_r($bla);
     $tagPost = new Post_Tag_mm($bla);
     $dbh->insertBDD('post_tag_mm', $tagPost);
 }
